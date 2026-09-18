@@ -25,3 +25,39 @@
 .nav-links a:hover {
   color: #93c5fd;
 }
+.dashboard {
+  padding: 40px;
+}
+
+.dashboard h1 {
+  margin-bottom: 10px;
+}
+
+.dashboard > p {
+  color: #64748b;
+  margin-bottom: 30px;
+}
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.dashboard-card {
+  background-color: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-card h3 {
+  margin-top: 0;
+  color: #475569;
+}
+
+.dashboard-card p {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
