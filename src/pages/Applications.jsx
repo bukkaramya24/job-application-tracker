@@ -13,7 +13,7 @@ function Applications(){
             <p>Here you can view all your job applications.</p>
            {applications.length===0?(<p>No applications add yet.</p>):
            (applications.map((application)=>(
-           <ApplicationCard key={application.id} application={application} />
+           <ApplicationCard key={application.id} application={application} setApplications={setApplications}/>
            )))}
         </div>
     );
