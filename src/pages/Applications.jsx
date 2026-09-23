@@ -1,22 +1,67 @@
-import {useState} from 'react'
-import ApplicationCard from '../components/ApplicationCard'
+
+import { useState } from "react";
+import ApplicationCard from "../components/ApplicationCard";
 
 
+function Applications() {
+  const [applications, setApplications] = useState(() => {
+    return JSON.parse(localStorage.getItem("applications")) || [];
+  });
 
-function Applications(){
-    const [applications,setApplications]=useState(()=>{
-        return JSON.parse(localStorage.getItem("applications"))||[];
-    })
-    return (
-        <div>
-            <h1>Applications</h1>
-            <p>Here you can view all your job applications.</p>
-           {applications.length===0?(<p>No applications add yet.</p>):
-           (applications.map((application)=>(
-           <ApplicationCard key={application.id} application={application} setApplications={setApplications}/>
-           )))}
-        </div>
-    );
+  const [search, setSearch] = useState("");
+  const [statusFilter, setStatusFilter] = useState("All");
+  const filteredApplications = applications.filter((application) => {
+  const matchesSearch =
+    application.company.toLowerCase().includes(search.toLowerCase()) ||
+    application.jobRole.toLowerCase().includes(search.toLowerCase());
+
+  const matchesStatus =
+    statusFilter === "All" ||
+    application.status === statusFilter;
+
+  return matchesSearch && matchesStatus;
+});
+
+ 
+
+  return (
+    <div>
+      <h1>Applications</h1>
+      <p>Here you can view all your job applications.</p>
+
+      
+      
+      <input
+         className="application-search"
+         type="text"
+         placeholder="Search by company or job role..."
+         value={search}
+         onChange={(event) => setSearch(event.target.value)}
+      />
+      <select className="application-filter"
+        value={statusFilter}
+        onChange={(event) => setStatusFilter(event.target.value)}
+      >
+        <option value="All">All Status</option>
+        <option value="Applied">Applied</option>
+        <option value="Interview">Interview</option>
+        <option value="Selected">Selected</option>
+        <option value="Rejected">Rejected</option>
+     </select>
+
+      {filteredApplications.length === 0 ? (
+        <p>No applications found.</p>
+      ) : (
+        filteredApplications.map((application) => (
+          <ApplicationCard
+            key={application.id}
+            application={application}
+            setApplications={setApplications}
+          />
+        ))
+      )}
+    </div>
+  );
 }
 
 export default Applications;

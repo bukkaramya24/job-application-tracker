@@ -173,3 +173,21 @@
   border-radius: 6px;
   font-size: 15px;
 }
+.application-search {
+  width: 400px;
+  max-width: 90%;
+  padding: 12px;
+  margin: 20px 40px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+
+.application-filter {
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: white;
+}
