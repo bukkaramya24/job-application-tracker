@@ -12,6 +12,17 @@ function AddApplication(){
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        if (!company.trim() || !jobRole.trim() || !dateApplied) {
+  alert("Please fill company, job role and date.");
+  return;
+      
+}
+if (jobLink && !jobLink.startsWith("http://") && !jobLink.startsWith("https://")) {
+  alert("Please enter a valid job link starting with http:// or https://");
+  return;
+}
+
+
 
         const existingApplications = JSON.parse(localStorage.getItem("applications")) || [];
 

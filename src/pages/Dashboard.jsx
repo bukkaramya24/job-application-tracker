@@ -1,9 +1,14 @@
 import { useState } from "react";
 
 function Dashboard() {
-  const [applications] = useState(() => {
-    return JSON.parse(localStorage.getItem("applications")) || [];
-  });
+const [applications] = useState(() => {
+  const storedApplications =
+    JSON.parse(localStorage.getItem("applications")) || [];
+
+  return Array.isArray(storedApplications)
+    ? storedApplications
+    : [storedApplications];
+});
 
   const totalApplications = applications.length;
 

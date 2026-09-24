@@ -191,3 +191,125 @@
   font-size: 16px;
   background-color: white;
 }
+.application-card label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.application-card input,
+.application-card select,
+.application-card textarea {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.application-card textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+/* Profile Page */
+
+.profile {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.profile h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.profile .form-group {
+  margin-bottom: 20px;
+}
+
+.profile .form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.profile .form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.profile button {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 6px;
+  background-color: #172554;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.profile button:hover {
+  background-color: #1e3a8a;
+}
+/* Responsive Design */
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .dashboard {
+    padding: 20px;
+  }
+
+  .dashboard-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .add-application {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .application-card {
+    margin: 15px;
+    padding: 15px;
+  }
+
+  .application-search {
+    width: calc(100% - 30px);
+    margin: 15px;
+  }
+
+  .application-filter {
+    width: calc(100% - 30px);
+    margin: 0 15px 15px;
+  }
+
+  .profile {
+    margin: 20px;
+    padding: 20px;
+  }
+}

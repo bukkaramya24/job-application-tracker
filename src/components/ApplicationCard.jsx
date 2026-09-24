@@ -5,6 +5,10 @@ function ApplicationCard({ application, setApplications }) {
 
   const [company, setCompany] = useState(application.company);
   const [jobRole, setJobRole] = useState(application.jobRole);
+  const [status, setStatus] = useState(application.status);
+  const [dateApplied, setDateApplied] = useState(application.dateApplied);
+  const [jobLink, setJobLink] = useState(application.jobLink);
+  const [notes, setNotes] = useState(application.notes);
 
   const handleDelete = () => {
     const updatedApplications = JSON.parse(
@@ -27,8 +31,12 @@ function ApplicationCard({ application, setApplications }) {
       if (item.id === application.id) {
         return {
           ...item,
-          company: company,
-          jobRole: jobRole,
+          company,
+          jobRole,
+          status,
+          dateApplied,
+          jobLink,
+          notes,
         };
       }
 
@@ -49,8 +57,9 @@ function ApplicationCard({ application, setApplications }) {
 
       {isEditing ? (
         <>
-          <label>Company Name</label>
+          <h3>Edit Application</h3>
 
+          <label>Company</label>
           <input
             type="text"
             value={company}
@@ -58,14 +67,42 @@ function ApplicationCard({ application, setApplications }) {
           />
 
           <label>Job Role</label>
-
           <input
             type="text"
             value={jobRole}
             onChange={(event) => setJobRole(event.target.value)}
           />
 
-          <br />
+          <label>Status</label>
+          <select
+            value={status}
+            onChange={(event) => setStatus(event.target.value)}
+          >
+            <option value="Applied">Applied</option>
+            <option value="Interview">Interview</option>
+            <option value="Selected">Selected</option>
+            <option value="Rejected">Rejected</option>
+          </select>
+
+          <label>Date Applied</label>
+          <input
+            type="date"
+            value={dateApplied}
+            onChange={(event) => setDateApplied(event.target.value)}
+          />
+
+          <label>Job Link</label>
+          <input
+            type="url"
+            value={jobLink}
+            onChange={(event) => setJobLink(event.target.value)}
+          />
+
+          <label>Notes</label>
+          <textarea
+            value={notes}
+            onChange={(event) => setNotes(event.target.value)}
+          />
 
           <button onClick={handleSave}>Save</button>
 
