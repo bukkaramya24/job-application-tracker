@@ -1,16 +1,104 @@
-# React + Vite
+# 💼 Job Application Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based Job Application Tracker that helps users manage and monitor their job applications in one place.
 
-Currently, two official plugins are available:
+## 📌 Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Searching for jobs can become difficult when applications are tracked manually.
 
-## React Compiler
+This project provides a simple interface where users can:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Add job applications
+- Track application status
+- Search applications
+- Filter applications by status
+- Edit application details
+- Delete applications
+- Save profile information
+- View dashboard statistics
 
-## Expanding the ESLint configuration
+Application data and profile information are stored using the browser's LocalStorage.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Features
+
+### 📊 Dashboard
+- Total Applications
+- Applied Applications
+- Interview Applications
+- Selected Applications
+- Rejected Applications
+- Dynamic application counts
+
+### 📝 Add Application
+Users can add:
+
+- Company name
+- Job role
+- Date applied
+- Application status
+- Job link
+- Notes
+
+### 🔍 Search & Filter
+- Search by company name
+- Search by job role
+- Filter by application status
+
+### ✏️ Edit Application
+Users can update:
+
+- Company
+- Job role
+- Status
+- Date applied
+- Job link
+- Notes
+
+### 🗑️ Delete Application
+Users can remove applications that are no longer needed.
+
+### 👤 Profile
+Users can save:
+
+- Name
+- Email
+- Phone
+- Skills
+- GitHub
+- LinkedIn
+
+### 📱 Responsive Design
+The application works on:
+
+- Desktop
+- Tablet
+- Mobile
+
+## 🛠️ Technologies Used
+
+- React.js
+- JavaScript
+- HTML
+- CSS
+- React Router
+- LocalStorage
+- Vite
+
+## 📂 Project Structure
+
+```text
+src
+├── components
+│   ├── Navbar.jsx
+│   └── ApplicationCard.jsx
+│
+├── pages
+│   ├── Dashboard.jsx
+│   ├── Applications.jsx
+│   ├── AddApplication.jsx
+│   └── Profile.jsx
+│
+├── App.jsx
+├── App.css
+├── index.css
+└── main.jsx
