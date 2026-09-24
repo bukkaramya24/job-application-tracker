@@ -50,7 +50,15 @@ function Applications() {
      </select>
 
       {filteredApplications.length === 0 ? (
-        <p>No applications found.</p>
+        <div className="empty-state">
+    <h2>📋 No applications found</h2>
+    <p>
+      Start tracking your job search by adding your first application.
+    </p>
+     <a href="/add" className="empty-state-button">
+    + Add Application
+  </a>
+  </div>
       ) : (
         filteredApplications.map((application) => (
           <ApplicationCard

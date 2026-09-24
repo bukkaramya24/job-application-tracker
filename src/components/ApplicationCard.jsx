@@ -116,7 +116,12 @@ function ApplicationCard({ application, setApplications }) {
 
           <p>Role: {application.jobRole}</p>
 
-          <p>Status: {application.status}</p>
+          <p>
+  Status:{" "}
+  <span className={`status-badge ${application.status.toLowerCase()}`}>
+    {application.status}
+  </span>
+</p>
 
           <p>Date Applied: {application.dateApplied}</p>
 
