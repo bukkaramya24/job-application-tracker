@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { Link } from "react-router";
 import ApplicationCard from "../components/ApplicationCard";
 
 
@@ -55,9 +56,9 @@ function Applications() {
     <p>
       Start tracking your job search by adding your first application.
     </p>
-     <a href="/add" className="empty-state-button">
-    + Add Application
-  </a>
+     <Link to="/add" className="empty-state-button">
+  + Add Application
+</Link>
   </div>
       ) : (
         filteredApplications.map((application) => (
