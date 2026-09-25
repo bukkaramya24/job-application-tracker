@@ -1,4 +1,4 @@
-import {BrowserRouter,Routes,Route} from 'react-router'
+import {HashRouter,Routes,Route} from 'react-router'
 
 import Navbar from './components/Navbar'
 
@@ -11,7 +11,7 @@ import './App.css'
 
 function App(){
   return (
-    <BrowserRouter  basename="/job-application-tracker">
+    <HashRouter>
     <Navbar />
     <Routes>
       <Route path="/" element={<Dashboard />} />
@@ -19,7 +19,7 @@ function App(){
       <Route path="/add" element={<AddApplication />} />
       <Route path="/profile" element={<Profile />} />
     </Routes>
-    </BrowserRouter>
+    </HashRouter>
     
     
 
