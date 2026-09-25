@@ -11,7 +11,7 @@ import './App.css'
 
 function App(){
   return (
-    <BrowserRouter>
+    <BrowserRouter  basename="/job-application-tracker">
     <Navbar />
     <Routes>
       <Route path="/" element={<Dashboard />} />
